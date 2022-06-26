@@ -1,0 +1,24 @@
+{
+  "name": "exchange",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dipunm/exchange.git",
+  "author": "Dipun Mistry <dipunm@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "grenache-grape": "^0.9.11"
+  },
+  "dependencies": {
+    "entoli": "^1.4.3",
+    "grenache-nodejs-http": "^0.7.12",
+    "grenache-nodejs-link": "^0.7.12",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "grape": "concurrently \"yarn grape:1\" \"yarn grape:2\"",
+    "grape:1": "grape --dp 20001 --aph 30001 --bn '127.0.0.1:20002'",
+    "grape:2": "grape --dp 20002 --aph 40001 --bn '127.0.0.1:20001'"
+  }
+}

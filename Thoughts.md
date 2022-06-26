@@ -1,0 +1,8 @@
+- Typescript would be useful to ensure types are properly formed across the codebase.
+- Grape may not be the best p2p library -- with only a "send to one random node" and a "send to all nodes" method.
+- Sending to specific clients can be done by registering service names with unique ids.
+- Public network requires MORE validation and DoS protection etc.
+- Prevent memory leak: expire orders except for on original client and auto-refresh
+- chosen cli tool crashes when terminal is resized
+- TODO: Make clients sync when starting up.
+- No security included, it is likely possible to spoof a user or their orders... That said, the implementation of the order itself would probably dictate how to secure it best.
