@@ -6,3 +6,9 @@
 - chosen cli tool crashes when terminal is resized
 - TODO: Make clients sync when starting up.
 - No security included, it is likely possible to spoof a user or their orders... That said, the implementation of the order itself would probably dictate how to secure it best.
+
+Orders don't sync properly if any of the nodes have been taken down (it works when you spin up clients and test, but as soon as a node is taken down, it no longer works as expected). I wasn't able to work out exactly why, but it wouldn't surprise me if it were to do with not disposing things properly
+
+For speed, I allowed clients to call themselves through grape, but it might be more reliable to not use HTTP to communicate with the local instance.
+
+I would have loved to write tests, but unfortunately, did not get past the prototyping and debugging.

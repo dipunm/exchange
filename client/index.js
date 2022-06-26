@@ -61,7 +61,7 @@ function matchOrder(orderId) {
   });
 }
 
-function fetchOrders() {
+function fetchRemoteOrders() {
   return new Promise((resolve, reject) => {
     peer.map('getLocalOrders', {}, options, (err, data) => {
       if (!data || !data.length) return resolve([]);
@@ -75,5 +75,5 @@ module.exports = {
   connect,
   makeOrder,
   matchOrder,
-  fetchOrders,
+  fetchRemoteOrders,
 }

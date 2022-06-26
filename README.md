@@ -14,3 +14,4 @@ As many clients as you wish to run:
 node application.js
 ```
 
+See Thoughts.md

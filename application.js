@@ -90,10 +90,18 @@ function syncWithOrders(orders) {
     });
 }
 
+// Timeout may not have been necessary.
 setTimeout(async () => {
-    const orders = await client.fetchOrders();
+    const orders = await client.fetchRemoteOrders();
     syncWithOrders(orders);
+
+    const interval = setInterval(async () => {
+        const orders = await client.fetchRemoteOrders();
+        syncWithOrders(orders);
+    }, 1000);
+
     await begin();
     // Note: No documented cleanup code to execute :(
+    clearInterval(interval);
     process.exit();
 }, 1000);

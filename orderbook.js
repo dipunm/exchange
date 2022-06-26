@@ -26,7 +26,6 @@ module.exports = {
     },
 
     markOrderAsMatched(orderId, matchClientId) {
-        // console.log('MARKORDER', orderId, matchClientId, new Error().stack);
         const order = orderbook[orderId];
         if (!order) throw new Error('Cannot mark order as matched: Order not found.');
         if (order.matchClientId) throw new Error('Cannot mark order as matched: Order already matched.');
