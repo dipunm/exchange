@@ -12,3 +12,5 @@ Orders don't sync properly if any of the nodes have been taken down (it works wh
 For speed, I allowed clients to call themselves through grape, but it might be more reliable to not use HTTP to communicate with the local instance.
 
 I would have loved to write tests, but unfortunately, did not get past the prototyping and debugging.
+
+I was playing with folder structures as I went along, but I still think it can be improved.
